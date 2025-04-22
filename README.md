@@ -21,11 +21,12 @@ Helly Chatbot is an AI-powered conversational assistant built with Python, Djang
 ## ⚙️ Configuration
 
 Copy .env.example to .env
-Add your GEMINI_API_KEY inside .env
-Restart the server
-Update the configuration files to connect the chatbot with your own API and integrate any additional features you need.
-🖼️ Screenshots
 
+Add your GEMINI_API_KEY inside .env
+
+Restart the server
+
+Update the configuration files to connect the chatbot with your own API and integrate any additional features you need.
 
 ## 🤝 Contributing
 
