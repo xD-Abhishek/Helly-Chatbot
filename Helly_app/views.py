@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from Helly.config import GOOGLE_API_KEY
 
-genai.configure(api_key="AIzaSyDwub8jiBS9c85GeysV-vxmnCaCn8UvyVk")
+genai.configure(api_key="YOUR-API-KEY")
 model = genai.GenerativeModel()
 chat = model.start_chat(history=[])
 
