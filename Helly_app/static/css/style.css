@@ -1,0 +1,284 @@
+/* body of the web */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1f1f1f;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+/* header of the web */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* menu button */
+.menu-btn {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.2s ease-in-out;
+}
+.menu-btn:hover {
+    background-color: transparent;
+    color: #ff4848;
+}
+
+/* container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+/* main body design */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 80px; /* Add enough padding to prevent chat window content from being covered by the input area */
+}
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Change this to flex-start */
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 80px;
+}
+
+/* helly heading design */
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* helly ai animated text design */
+.animated-text {
+    animation: rainbow 10s ease-in-out infinite;
+}
+
+/* animation keyframes */
+@keyframes rainbow {
+    0% {
+      color: #FF2C55;
+    }
+    10% {
+      color: #FF6B6B;
+    }
+    25% {
+      color: #eb25d0;
+    }
+    40% {
+      color: #2050fd;
+    }
+    55% {
+      color: #fffd7a;
+    }
+    70% {
+      color: #14fad4;
+    }
+    85% {
+      color: #ffd000;
+    }
+    100% {
+      color: #FF2C55;
+    }
+}
+
+/* description design */
+span {
+    color: grey;
+    text-align: center;
+}
+
+/* chat window design */
+#chat-window {
+    height: calc(100vh - 200px); /* reduce height to make space for heading */
+    width: 100%;
+    max-width: 800px;
+    overflow-y: scroll;
+    background-color: #333333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+}
+#chat-window::-webkit-scrollbar {
+    width: 10px;
+}
+#chat-window::-webkit-scrollbar-track {
+    background-color: #2c2c2c;
+    border-radius: 5px;
+}
+#chat-window::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5px;
+}
+#chat-window::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* design of send message box */
+#chat-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #1f1f1f;
+    margin-bottom: 20px; /* add margin to the bottom */
+}
+
+/* footer design */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+}
+.footer p {
+    color: #f8f8f2;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* styling of user input message */
+#user_input {
+    flex-grow: 1;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+/* submit button design */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* chat window design */
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 400px;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.chat-window p {
+    margin: 0;
+    padding: 5px;
+}
+
+/* bot response and margin design */
+.bot-message {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* code block design */
+.code-block {
+    background-color: #1a1a1a;
+    color: #f8f8f2;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+/* font type monospace */
+.code-block code {
+    font-family: "Fira Code", monospace;
+}
+
+/* single line code blocks */
+.inline-code {
+    background-color: #1a1a1a;
+    color: #f8f8f2;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Fira Code", monospace;
+}
+
+/* language as code header design */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* code block content copy button */
+.copy-btn {
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.copy-btn:hover {
+    background-color: #006B84;
+}
+
+/* language type */
+.language-javascript {
+    color: #f8dc3d;
+}
+.language-css {
+    color: #87ceeb;
+}
+.language-html {
+    color: #f06529;
+}
