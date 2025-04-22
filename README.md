@@ -20,7 +20,7 @@ Helly Chatbot is an AI-powered conversational assistant built with Python, Djang
 
 ### Installation
 
-```bash
+bash
 git clone https://github.com/xD-Abhishek/Helly-Chatbot.git
 cd Helly-Chatbot
 python -m venv venv             # Optional but recommended
@@ -30,7 +30,7 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 
-⚙️ Configuration
+### Configuration
 Copy .env.example to .env
 
 Add your GEMINI_API_KEY inside .env
@@ -41,7 +41,7 @@ Update the configuration files to connect the chatbot with your own API and inte
 🖼️ Screenshots
 
 
-🤝 Contributing
+### Contributing
 Fork this repository
 
 Create a new branch (git checkout -b feature/AwesomeFeature)
