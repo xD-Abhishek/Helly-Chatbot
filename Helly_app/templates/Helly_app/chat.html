@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helly ~</title>
+    <!-- PrismJS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.css" integrity="sha384-eDqODaVEbMHm+EiFmBRfxSkzxyH4ff2Qfnk4mBZX6IvwU6wvF/OxNMQ6yYX5M5HO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.js" integrity="sha384-QffwybrW8zxvIaAL7V1wNtRr7VgJQfTb/3JHkXz/7CrbMv/gzNq3I0o95OzlOtsS" crossorigin="anonymous"></script>
+    <!-- Font Awesome CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prism.css' %}" />
+    <!-- link js files -->
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/prism.js' %}"></script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ClipboardJS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+</head>
+<body>  
+    <div class="container">
+        <div class="header">
+            <!-- go back to main webpage -->
+             <button class="menu-btn" onclick="window.location.href = '#';">Go back</button>
+        </div>
+
+        <!-- helly ai message -->
+        <h1 class="animated-text">Helly AI</h1>
+        <span>An AI powered Chatbot</span>
+
+        <!-- chat window -->
+        <div class="main">
+            <div id="chat-window"></div>
+        </div>
+
+        <!-- chat form -->
+        <form id="chat-form">
+            <input type="text" id="user_input" placeholder="Type your message...">
+            {% csrf_token %}
+            <button type="submit">Send</button>
+        </form>
+
+        <!-- send request to server and display the response on the chat window -->
+        <script>
+            $('#chat-form').on('submit', function (e) {
+                e.preventDefault();
+                let user_input = $('#user_input').val();
+                $('#user_input').val('');
+
+                if (user_input) {
+                    let user_message = $('<p>').html('<strong>- You: </strong>' + user_input);
+                    $('#chat-window').append(user_message);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '',
+                        data: {'user_input': user_input},
+                        dataType: 'json',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                        },
+                        success: function (data) {
+                            let bot_response = data.response;
+                            let bot_message = $('<div>').addClass('bot-message');
+                                bot_message.append($('<p>').html('<strong>- Helly: </strong>' + formatText(bot_response)));
+                            $('#chat-window').append(bot_message);
+                            $('#chat-window').scrollTop($('#chat-window')[0].scrollHeight);
+                        }
+                    });
+                }
+            });
+        </script>
+
+        <!-- footer -->
+        <div class="footer">
+            <p>&copy; 2024 Helly AI. All rights reserved. Helly&trade;</p>
+        </div>
+    </div>
+</body>
+</html>
