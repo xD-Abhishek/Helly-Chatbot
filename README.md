@@ -28,7 +28,8 @@ source venv/bin/activate        # (macOS/Linux)
 venv\Scripts\activate           # (Windows)
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py runserver '''
+python manage.py runserver
+bash'''
 
 ## ⚙️ Configuration
 
